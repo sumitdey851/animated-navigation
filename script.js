@@ -16,10 +16,20 @@ function toggleNav() {
         // Animate In - Overlay
         overlay.classList.remove('overlay-slide-left');
         overlay.classList.add('overlay-slide-right');
+        // Animate In - Nav Items
+        for (let i = 0; i < 5; i++) {
+            menuItems[i].classList.remove(`slide-out-${i+1}`);
+            menuItems[i].classList.add(`slide-in-${i+1}`);
+        };
     } else {
         // Animate Out - Overlay
         overlay.classList.remove('overlay-slide-right');
         overlay.classList.add('overlay-slide-left');
+        // Animate Out - Nav Items
+        for (let i = 0; i < 5; i++) {
+            menuItems[i].classList.remove(`slide-in-${i+1}`);
+            menuItems[i].classList.add(`slide-out-${i+1}`);
+        };
     }
 }
 
